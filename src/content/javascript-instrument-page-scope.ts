@@ -784,6 +784,11 @@ export const pageScript = function() {
     logCallStack: true,
   });
 
+  // Access to document.referrer
+  instrumentObjectProperty(window.document, "window.document", "referrer", {
+    logCallStack: true,
+  });
+
   // Access to canvas
   instrumentObject(window.HTMLCanvasElement.prototype, "HTMLCanvasElement");
 
